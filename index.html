@@ -11,15 +11,19 @@
 </head>
 <body>
 <main class="container my-4 card p-2">
+    <h1 class="display-2 text-center text-primary text-uppercase">Bank System</h1>
+    <div class="alert alert-success d-none" id="success">Customer Added Successfully</div>
+    <div class="alert alert-warning d-none" id="delete">Customer Deleted successfully</div>
     <form method="post">
         <div class="form-group mb-3">
             <label class="form-label" for="cName">Customer Name</label>
             <input class="form-control" id="cName" name="cName" type="text"/>
+            <p class="text-danger my-2 d-none" id="cNameValidation">Title Field is required</p>
         </div>
         <div class="form-group mb-3">
             <label class="form-label" for="amount">Amount</label>
             <input class="form-control" id="amount" name="amount" type="number"/>
-        </div>
+            <p class="text-danger my-2 d-none" id="amountValidation">Amount Field is required</p>
         </div>
         <div class="form-group mb-3 d-flex justify-content-end align-item-center">
             <input class="btn btn-success" type="submit"/>
@@ -27,9 +31,9 @@
     </form>
 </main>
 
-<table class=" container table table-striped table-hover my-3">
+<table class=" container table table-striped table-hover my-3 bg-primary">
     <thead class="text-center">
-    <tr>
+    <tr class="text-white">
         <th>#</th>
         <th>Customer Name</th>
         <th>Invoices</th>

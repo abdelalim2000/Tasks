@@ -2,10 +2,8 @@
   "name": "bank-system",
   "version": "1.0.0",
   "description": "A Full js Bank system",
+  "type": "module",
   "main": "index.js",
-  "scripts": {
-    "dev": "node index.js"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/abdelalim2000/Tasks.git"

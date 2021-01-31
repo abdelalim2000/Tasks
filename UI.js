@@ -1,27 +1,15 @@
+import Storage from "./Storage.js";
+
 class UI {
     static displayCustomer() {
-        const StoredCustomer = [
-            {
-                id: Math.random(Date.now()).toString(36).substr(2, 7),
-                customer_name: "Mohamed",
-                amount: 5000,
-                taxes: 500,
-            },
-            {
-                id: Math.random(Date.now()).toString(36).substr(2, 7),
-                customer_name: "Ahmed",
-                amount: 7000,
-                taxes: 700,
-            },
-        ];
-
-        const Customers = StoredCustomer;
+        const Customers = Storage.getClients();
         Customers.forEach(customer => UI.addCustomerToView(customer))
     }
 
     static addCustomerToView(customer) {
         const viewList = document.getElementById('customer-list')
         const row = document.createElement("tr")
+        row.classList.add("text-white")
         row.innerHTML = `
             <td>${customer.id}</td>
             <td>${customer.customer_name}</td>
@@ -33,14 +21,47 @@ class UI {
     }
 
     static clearData() {
-        document.getElementById('cName').value = ""
-        document.getElementById('amount').value = ""
+        document.getElementById('cName').value = null
+        document.getElementById('amount').value = null
     }
 
     static deleteCustomer(customer) {
         if (customer.classList.contains('delete')) {
             customer.parentElement.parentElement.remove()
         }
+    }
+
+
+    // Validations Control UI
+    static ValidationError(dataTarget) {
+        if (dataTarget === 'customer_name') {
+            document.getElementById('cNameValidation').classList.remove('d-none')
+        }
+
+        if (dataTarget === 'amount') {
+            document.getElementById('amountValidation').classList.remove('d-none')
+        }
+    }
+
+    static warningNotification() {
+        document.getElementById('delete').classList.remove('d-none')
+    }
+
+    static ValidationSuccess() {
+        document.getElementById('success').classList.remove('d-none')
+    }
+
+    static clearErrorValidation() {
+        document.getElementById('cNameValidation').classList.add('d-none')
+        document.getElementById('amountValidation').classList.add('d-none')
+    }
+
+    static clearSuccessValidation() {
+        document.getElementById('success').classList.add('d-none')
+    }
+
+    static clearDeleteValidation() {
+        document.getElementById('delete').classList.add('d-none')
     }
 }
 
