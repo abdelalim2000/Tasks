@@ -1,0 +1,19 @@
+{
+  "name": "bank-system",
+  "version": "1.0.0",
+  "description": "A Full js Bank system",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abdelalim2000/Tasks.git"
+  },
+  "author": "Mohamed Ahmed abdelaleem",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/abdelalim2000/Tasks/issues"
+  },
+  "homepage": "https://github.com/abdelalim2000/Tasks#readme"
+}
